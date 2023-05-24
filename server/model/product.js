@@ -6,7 +6,7 @@ const ProductSchema = new Schema({
   name: {
     type: String,
     require: true,
-    max: [60, "最大60文字までの入力制限があります"],
+    max: [60, "60文字以下で入力してください"],
   },
   price: Number,
   description: String,
