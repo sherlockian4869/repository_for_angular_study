@@ -22,7 +22,7 @@ export class SignupComponent implements OnInit {
       },
       (err: HttpErrorResponse) => {
         console.error(err);
-        this.errors = err.error.error;
+        this.errors = err.error.errors;
       }
     );
   }

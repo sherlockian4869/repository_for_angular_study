@@ -9,25 +9,25 @@ router.post("/login", function (req, res) {
 
   if (!email) {
     return res.status(422).send({
-      error: [{ title: "user error", detail: "Please fill email" }],
+      errors: [{ title: "user error", detail: "please fill email" }],
     });
   }
 
   if (!password) {
     return res.status(422).send({
-      error: [{ title: "user error", detail: "Please fill password" }],
+      errors: [{ title: "user error", detail: "please fill password" }],
     });
   }
 
   User.findOne({ email }).then((foundUser) => {
     if (!foundUser) {
       return res.status(422).send({
-        error: [{ title: "user error", detail: "user is not exist" }],
+        errors: [{ title: "user error", detail: "user is not exist" }],
       });
     }
     if (!foundUser.hasSamePassword(password)) {
       return res.status(422).send({
-        error: [{ title: "user error", detail: "incorrect password" }],
+        errors: [{ title: "user error", detail: "incorrect password" }],
       });
     }
     const token = jwt.sign(
@@ -53,32 +53,32 @@ router.post("/signup", function (req, res) {
 
   if (!username) {
     return res.status(422).send({
-      error: [{ title: "user error", detail: "Please fill username" }],
+      errors: [{ title: "user error", detail: "please fill username" }],
     });
   }
 
   if (!email) {
     return res.status(422).send({
-      error: [{ title: "user error", detail: "Please fill email" }],
+      errors: [{ title: "user error", detail: "please fill email" }],
     });
   }
 
   if (!password) {
     return res.status(422).send({
-      error: [{ title: "user error", detail: "Please fill password" }],
+      errors: [{ title: "user error", detail: "please fill password" }],
     });
   }
 
   if (password !== confirmPassword) {
     return res.status(422).send({
-      error: [{ title: "user error", detail: "Please check passwords" }],
+      errors: [{ title: "user error", detail: "please check passwords" }],
     });
   }
 
   User.findOne({ email }).then((foundUser) => {
     if (foundUser) {
       return res.status(422).send({
-        error: [{ title: "user error", detail: "user already exist" }],
+        errors: [{ title: "user error", detail: "user already exist" }],
       });
     }
 
@@ -91,7 +91,7 @@ router.post("/signup", function (req, res) {
       .catch((err) => {
         if (err) {
           return res.status(422).send({
-            error: [{ title: "user error", detail: "something went wrong" }],
+            errors: [{ title: "user error", detail: "something went wrong" }],
           });
         }
       });
