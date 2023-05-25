@@ -10,7 +10,7 @@ const userRoutes = require("./routes/users");
 mongoose.connect(config.DB_URI).then(() => {
   console.log("Connected!");
   const fakeDb = new FakeDB();
-  fakeDb.initDb();
+  //   fakeDb.initDb();
 });
 
 const app = express();
