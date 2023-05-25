@@ -80,6 +80,12 @@
                 </button>
               </div>
             </form>
+            <div
+              *ngIf="errors && errors.length > 0"
+              class="alert alert-danger mt-1"
+            >
+              <p *ngFor="let error of errors">{{ error.detail }}</p>
+            </div>
             <div class="forgot">
               <a href="#" class="btn btn-link btn-danger"
                 >パスワードを忘れた場合</a
