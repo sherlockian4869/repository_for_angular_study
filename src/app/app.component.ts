@@ -1,16 +1,22 @@
+import { filter, Subscription } from 'rxjs';
+
+import {
+  DOCUMENT,
+  Location,
+  LocationStrategy,
+  PlatformLocation,
+} from '@angular/common';
 import {
   Component,
-  OnInit,
-  Inject,
-  Renderer2,
   ElementRef,
+  Inject,
+  OnInit,
+  Renderer2,
   ViewChild,
 } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
-import { DOCUMENT } from '@angular/common';
-import { LocationStrategy, PlatformLocation, Location } from '@angular/common';
+import { NavigationEnd, Router } from '@angular/router';
+
 import { NavbarComponent } from './common/navbar/navbar.component';
-import { filter, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-root',

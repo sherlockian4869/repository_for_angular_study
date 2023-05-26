@@ -1,10 +1,11 @@
-import { Component, ElementRef, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/auth/shared/auth.service';
+
 import {
   Location,
   LocationStrategy,
   PathLocationStrategy,
 } from '@angular/common';
-import { AuthService } from 'src/app/auth/shared/auth.service';
+import { Component, ElementRef, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
