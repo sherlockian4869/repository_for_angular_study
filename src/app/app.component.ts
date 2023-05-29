@@ -70,9 +70,9 @@ export class AppComponent implements OnInit {
     }
   }
   removeFooter() {
-    var titlee = this.location.prepareExternalUrl(this.location.path());
-    titlee = titlee.slice(1);
-    if (titlee === 'signup' || titlee === 'nucleoicons') {
+    var title = this.location.prepareExternalUrl(this.location.path());
+    title = title.slice(1);
+    if (title === 'signup') {
       return false;
     } else {
       return true;

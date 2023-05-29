@@ -31,8 +31,6 @@ export class NavbarComponent implements OnInit {
   sidebarOpen() {
     const toggleButton = this.toggleButton;
     const html = document.getElementsByTagName('html')[0];
-    // console.log(html);
-    // console.log(toggleButton, 'toggle');
 
     setTimeout(function () {
       toggleButton.classList.add('toggled');
@@ -49,8 +47,6 @@ export class NavbarComponent implements OnInit {
     html.classList.remove('nav-open');
   }
   sidebarToggle() {
-    // const toggleButton = this.toggleButton;
-    // const body = document.getElementsByTagName('body')[0];
     if (this.sidebarVisible === false) {
       this.sidebarOpen();
     } else {
@@ -58,11 +54,11 @@ export class NavbarComponent implements OnInit {
     }
   }
   isHome() {
-    var titlee = this.location.prepareExternalUrl(this.location.path());
-    if (titlee.charAt(0) === '#') {
-      titlee = titlee.slice(1);
+    var title = this.location.prepareExternalUrl(this.location.path());
+    if (title.charAt(0) === '#') {
+      title = title.slice(1);
     }
-    if (titlee === '/home') {
+    if (title === '/home') {
       return true;
     } else {
       return false;
